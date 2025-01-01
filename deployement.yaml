@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: my-deployement
+metadata:
+  name: my-deployment
+  labels:
+    app: my-deployement
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-deployement
+  template:
+    metadata:
+      labels:
+        app: my-deployement
+    spec:
+      containers:
+      - name: my-deployement
+        image: abhiru/project2
+        ports:
+        - containerPort: 80
